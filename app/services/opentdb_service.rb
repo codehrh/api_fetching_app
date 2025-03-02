@@ -5,7 +5,7 @@ class OpentdbService
   BASE_URL = 'https://opentdb.com/api.php'
 
   def self.fetch_trivia(number)
-    url = "#{BASE_URL}?amount=#{number}"
+    url = "#{BASE_URL}?amount=#{number}&category=9&difficulty=easy&type=boolean"
     response = Net::HTTP.get_response(URI(url))
 
     if response.is_a?(Net::HTTPSuccess)
