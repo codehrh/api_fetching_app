@@ -1,0 +1,55 @@
+<h1>Trivia Questions</h1>
+
+<!-- fetching logic -->
+<form action="<%= trivias_index_path %>" method="get">
+  <label for="number">Enter number of trivia questions:</label>
+  <input type="number" id="number" name="number" min="1" required>
+  <button type="submit">Fetch Trivia</button>
+</form>
+<br>
+
+<!-- table displaying logic -->
+<% if @trivia_questions.present? %>
+  <table border="1" cellpadding="10" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Difficulty</th>
+        <th>Category</th>
+        <th>Question</th>
+        <th>Correct Answer</th>
+        <th>Incorrect Answers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @trivia_questions.each do |item| %>
+        <tr>
+          <td>
+            <% if item["type"] == "multiple" %>
+              Multiple Choice
+            <% else %>
+              True or False
+            <% end %>
+          </td>
+          <td><%= item["difficulty"].capitalize %></td>
+          <td><%= item["category"].html_safe %></td>
+          <td><%= item["question"].html_safe %></td>
+          <td><%= item["correct_answer"].html_safe %></td>
+          <td>
+            <% if item["incorrect_answers"].is_a?(Array) %>
+              <ul>
+                <% item["incorrect_answers"].each do |incorrect_answer| %>
+                  <li><%= incorrect_answer.html_safe %></li>
+                <% end %>
+              </ul>
+            <% else %>
+              <%= item["incorrect_answers"].html_safe %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No trivia questions available.</p>
+<% end %>
