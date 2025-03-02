@@ -8,8 +8,14 @@
 </form>
 <br>
 
+<!-- Download as JSON or CSV logic -->
+<% if session[:trivia_questions].present? %>
+  <a href="<%= trivias_download_path(format: :json) %>" class="download_button">Download as JSON</a>
+  <a href="<%= trivias_download_path(format: :csv) %>"class="download_button">Download as CSV</a>
+<% end %>
+
 <!-- table displaying logic -->
-<% if @trivia_questions.present? %>
+<% if session[:trivia_questions].present? %>
   <table border="1" cellpadding="10" cellspacing="0">
     <thead>
       <tr>
@@ -18,7 +24,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @trivia_questions.each do |item| %>
+      <% session[:trivia_questions].each do |item| %>
         <tr>
           <td><%= item["question"].html_safe %></td>
           <td><%= item["correct_answer"].html_safe %></td>
@@ -28,11 +34,4 @@
   </table>
 <% else %>
   <p>No trivia questions available.</p>
-<% end %>
-
-<!-- Download as JSON or CSV logic -->
-<% if session[:trivia_questions].present? %>
-  <br>
-  <a href="<%= trivias_download_path(format: :json) %>" class="download_button">Download as JSON</a>
-  <a href="<%= trivias_download_path(format: :csv) %>"class="download_button">Download as CSV</a>
 <% end %>

@@ -1,6 +1,5 @@
 class TriviasController < ApplicationController
-  require "csv"
-
+  
   def index
     number = (params[:number] || 15).to_i.clamp(1, 15) # limited query to only between 1 and 15
     
@@ -15,21 +14,12 @@ class TriviasController < ApplicationController
   end
   
   def download
-    session_questions = session[:trivia_questions] || []
+    session_questions = session[:trivia_questions]
 
     # format response
     respond_to do |format|
-      format.json { send_data session_questions.to_json, filename: "trivia-questions.json", type: "application/json"}
-      format.csv { send_data to_csv(session_questions), filename: "trivia-questions.csv" }
-    end
-  end
-
-  private
-
-  def to_csv(data)
-    CSV.generate do |csv|
-      csv << ["question", "correct_answer"]
-      data.each { |row| csv << row.values }
+      format.json { send_data DownloadService.to_json(session_questions), filename: "trivia-questions.json", type: "application/json"}
+      format.csv { send_data DownloadService.to_csv(session_questions), filename: "trivia-questions.csv" }
     end
   end
 
