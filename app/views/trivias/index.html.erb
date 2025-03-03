@@ -1,21 +1,21 @@
+<div class="main_div">
+<div class="title">
 <h1>True or False Trivia Questions</h1>
+</div>
 
 <!-- fetching logic -->
+<div class="trivia_form">
 <form action="<%= trivias_index_path %>" method="get">
   <label for="number">Enter number of trivia questions:</label>
   <input type="number" id="number" name="number" min="1" required>
   <button type="submit">Fetch Trivia</button>
 </form>
+</div>
 <br>
-
-<!-- Download as JSON or CSV logic -->
-<% if session[:trivia_questions].present? %>
-  <a href="<%= trivias_download_path(format: :json) %>" class="download_button">Download as JSON</a>
-  <a href="<%= trivias_download_path(format: :csv) %>"class="download_button">Download as CSV</a>
-<% end %>
 
 <!-- table displaying logic -->
 <% if session[:trivia_questions].present? %>
+<div class="trivia_table">
   <table border="1" cellpadding="10" cellspacing="0">
     <thead>
       <tr>
@@ -32,6 +32,32 @@
       <% end %>
     </tbody>
   </table>
+</div>
+<br>
+
+<!-- buttons that lead to download json and csv -->
+<div class="button_block">
+<% if session[:trivia_questions].present? %>
+  <button class="download_button" onclick="printToConsole()">Print to Console</button>
+  <button class="download_button" onclick="downloadFile('json')">Download as JSON</button>
+  <button class="download_button" onclick="downloadFile('csv')">Download as CSV</button>
+<% end %>
+</div>
+
+<!-- print to browser console logic -->
+<script>
+  function printToConsole() {
+    let triviaData = <%= raw session[:trivia_questions].to_json %>; 
+    console.log("Trivia Questions:", triviaData);
+  }
+
+  function downloadFile(format) {
+    window.location.href = `<%= trivias_download_path %>.${format}`;
+  }
+</script>
+<!-- logic leading to download_path for json and csv -->
+
 <% else %>
   <p>No trivia questions available.</p>
 <% end %>
+</div>

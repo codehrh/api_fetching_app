@@ -1,9 +1,9 @@
 class TriviasController < ApplicationController
-  
+
   def index
-    number = (params[:number] || 15).to_i.clamp(1, 15) # limited query to only between 1 and 15
+    number = (params[:number] || 15).to_i.clamp(1, 15) # default 15 when no value is give, limited query to only between 1 and 15 to prevent cookie overflow
     
-    # fetch trivia data then store to session as json
+    # fetch trivia data with param
     @trivia_questions = OpentdbService.fetch_trivia(number)
 
     # storing only specific fields to session to prevent cookie overflow
