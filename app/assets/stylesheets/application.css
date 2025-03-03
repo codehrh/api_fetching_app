@@ -1,15 +1,125 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Main Container */
+.main_div {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+.title h1 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+.trivia_form {
+  margin-bottom: 20px;
+}
+
+.trivia_form label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.trivia_form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 60px;
+  text-align: center;
+}
+
+.trivia_form button {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.trivia_form button:hover {
+  background-color: #0056b3;
+}
+
+/* Table Styling */
+.trivia_table {
+  width: 100%;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+
+td {
+  background-color: #f8f8f8;
+}
+
+/* Button Block */
+.button_block {
+  margin-top: 20px;
+}
+
+.download_button {
+  padding: 10px 15px;
+  margin: 5px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.download_button:hover {
+  background-color: #218838;
+}
+
+.download_button:first-child {
+  background-color: #dc3545;
+}
+
+.download_button:first-child:hover {
+  background-color: #c82333;
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+  .main_div {
+    padding: 10px;
+  }
+
+  th, td {
+    font-size: 14px;
+  }
+
+  .download_button {
+    width: 100%;
+  }
+}

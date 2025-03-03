@@ -7,11 +7,10 @@
 <div class="trivia_form">
 <form action="<%= trivias_index_path %>" method="get">
   <label for="number">Enter number of trivia questions:</label>
-  <input type="number" id="number" name="number" min="1" required>
+  <input type="number" id="number" name="number" min="1" max="15" required>
   <button type="submit">Fetch Trivia</button>
 </form>
 </div>
-<br>
 
 <!-- table displaying logic -->
 <% if session[:trivia_questions].present? %>
