@@ -12,7 +12,7 @@ This is a simple Rails app that fetches data from an API and allows the user to 
 2. Navigate to the project directory: `cd api_fetching_app`
 3. Install dependencies: `bundle install`
 4. Start the Rails server: `rails s`
-5. Open the application in your browser by visiting: `http://localhost:3000` or `http://127.0.0.1:3000`.
+5. Open the application in your browser by visiting: `http://localhost:3000` or `http://127.0.0.1:3000`
 
 ## Usage
 1. Input your desired number of questions (between 1 and 15) and press "Fetch Trivia" to load the corresponding number of questions.
