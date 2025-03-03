@@ -37,9 +37,9 @@
 <!-- buttons that lead to download json and csv -->
 <div class="button_block">
 <% if session[:trivia_questions].present? %>
-  <button class="download_button" onclick="printToConsole()">Print to Console</button>
-  <button class="download_button" onclick="downloadFile('json')">Download as JSON</button>
-  <button class="download_button" onclick="downloadFile('csv')">Download as CSV</button>
+  <button class="print_button" onclick="printToConsole()">Print to Console</button>
+  <button class="download_json_button" onclick="downloadFile('json')">Download as JSON</button>
+  <button class="download_csv_button" onclick="downloadFile('csv')">Download as CSV</button>
 <% end %>
 </div>
 

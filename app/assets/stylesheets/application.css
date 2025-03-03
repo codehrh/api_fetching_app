@@ -40,7 +40,7 @@ body {
 
 .trivia_form button {
   padding: 8px 15px;
-  background-color: #007bff;
+  background-color: #057e99;
   color: white;
   border: none;
   border-radius: 5px;
@@ -48,7 +48,7 @@ body {
 }
 
 .trivia_form button:hover {
-  background-color: #0056b3;
+  background-color: #045c70;
 }
 
 .trivia_table {
@@ -70,7 +70,7 @@ th, td {
 }
 
 th {
-  background-color: #007bff;
+  background-color: #023844;
   color: white;
 }
 
@@ -82,26 +82,46 @@ td {
   margin-top: 20px;
 }
 
-.download_button {
+.print_button {
+  background-color: #dc3545;
   padding: 10px 15px;
   margin: 5px;
-  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.print_button:hover {
+  background-color: #c82333;
+}
+
+.download_json_button {
+  padding: 10px 15px;
+  margin: 5px;
+  background-color: #fe8157;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.download_button:hover {
-  background-color: #218838;
+.download_json_button:hover {
+  background-color: #d8572b;
 }
 
-.download_button:first-child {
-  background-color: #dc3545;
+.download_csv_button {
+  padding: 10px 15px;
+  margin: 5px;
+  background-color: #00bdbe;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.download_button:first-child:hover {
-  background-color: #c82333;
+.download_csv_button:hover {
+  background-color: #008080;
 }
 
 @media (max-width: 600px) {
