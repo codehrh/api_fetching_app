@@ -6,7 +6,6 @@ body {
   padding: 20px;
 }
 
-/* Main Container */
 .main_div {
   max-width: 800px;
   margin: auto;
@@ -16,14 +15,12 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Title Styling */
 .title h1 {
   color: #333;
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-/* Form Styling */
 .trivia_form {
   margin-bottom: 20px;
 }
@@ -54,7 +51,6 @@ body {
   background-color: #0056b3;
 }
 
-/* Table Styling */
 .trivia_table {
   width: 100%;
   margin-top: 20px;
@@ -82,7 +78,6 @@ td {
   background-color: #f8f8f8;
 }
 
-/* Button Block */
 .button_block {
   margin-top: 20px;
 }
@@ -109,7 +104,6 @@ td {
   background-color: #c82333;
 }
 
-/* Responsive Styling */
 @media (max-width: 600px) {
   .main_div {
     padding: 10px;
