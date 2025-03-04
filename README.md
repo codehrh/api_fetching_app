@@ -1,6 +1,10 @@
 # API Fetching App
 This is a simple Rails app that fetches data from an API and allows the user to download or print the same data.
 
+# Related Project
+## API call script: `https://github.com/codehrh/api_call_script`
+- This project is related to this API call script, which is meant to be used through the example usage: `ruby api_call.rb -n <number_of_questions> -f <format>` 
+
 ## Features
 - Fetches trivia questions from an API (OpenTDB).
 - Displays the questions and their respective answers in a table format.
