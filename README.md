@@ -3,7 +3,8 @@ This is a simple Rails app that fetches data from an API and allows the user to 
 
 # Related Project
 ## API call script: `https://github.com/codehrh/api_call_script`
-- This project is related to this API call script, which is meant to be used through the example usage: `ruby api_call.rb -n <number_of_questions> -f <format>` 
+- The related project is a utility script that focuses only on the backend functionality. Example usage: `ruby api_call.rb -n <number_of_questions> -f <format>`
+- Please see the README file in the repository of api_call_script for more information! 😃
 
 ## Features
 - Fetches trivia questions from an API (OpenTDB).
