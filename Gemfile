@@ -51,4 +51,4 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem 'rails_live_reload', '~> 0.4.0'
+gem 'rails_live_reload', '~> 0.5.0'
